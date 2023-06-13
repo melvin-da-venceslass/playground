@@ -88,7 +88,7 @@ async def favicon():
 def home(request: Request):#,user = Depends(get_current_username)):
     return templates.TemplateResponse('index.html', context={'request': request})
 
-@app.get("/manage_product.html", response_class=HTMLResponse)
+@app.get("/manage_product", response_class=HTMLResponse)
 def home(request: Request):#,user = Depends(get_current_username)):
     return templates.TemplateResponse('manage_product.html', context={'request': request})
 
