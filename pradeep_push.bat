@@ -1,3 +1,3 @@
 git add * 
-git commit -m "added /static/ directory modified"
+git commit -m "uploaded css folder"
 git push -u origin pradeep
