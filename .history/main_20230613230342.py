@@ -88,14 +88,10 @@ async def favicon():
 def home(request: Request):#,user = Depends(get_current_username)):
     return templates.TemplateResponse('index.html', context={'request': request})
 
-@app.get("/manage_product.html", response_class=HTMLResponse)
+@app.get("/", response_class=HTMLResponse)
 def home(request: Request):#,user = Depends(get_current_username)):
-    return templates.TemplateResponse('manage_product.html', context={'request': request})
+    return templates.TemplateResponse('manage.html', context={'request': request})
 
-
-@app.get("/order.html", response_class=HTMLResponse)
-def home(request: Request):#,user = Depends(get_current_username)):
-    return templates.TemplateResponse('order.html', context={'request': request})
 if __name__ == "__main__":
    uvicorn.run("main:app",reload=True,
                host='0.0.0.0', port=8000, workers=1)
