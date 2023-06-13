@@ -105,20 +105,20 @@ def get_products(request:Request):
     {
             0:{
             "product_id":1,
-            "name":"rice",
-            "price_per_unit":10},
+            "product_name":"rice",
+            "product_price_per_unit":10},
          1:{
             "product_id":2,
-            "name":"dhal",
-            "price_per_unit":20},
+            "product_name":"dhal",
+            "product_price_per_unit":20},
           2:{
             "product_id":3,
-            "name":"soap",
-            "price_per_unit":30},
-         3: {
+            "product_name":"soap",
+            "product_price_per_unit":30},
+         3 {
             "product_id":4,
-            "name":"toothpaste",
-            "price_per_unit":40}
+            "product_name":"toothpaste",
+            "product_price_per_unit":40}
     }
         
     )

@@ -100,28 +100,26 @@ def home(request: Request):#,user = Depends(get_current_username)):
 
 @app.get("/getProducts")
 def get_products(request:Request):
-    return JSONResponse(
-        
-    {
-            0:{
+    return {
+        [{
             "product_id":1,
-            "name":"rice",
-            "price_per_unit":10},
-         1:{
+            "product_name":"rice",
+            "product_price_per_unit":10},
+         {
             "product_id":2,
-            "name":"dhal",
-            "price_per_unit":20},
-          2:{
+            "product_name":"dhal",
+            "product_price_per_unit":20},
+          {
             "product_id":3,
-            "name":"soap",
-            "price_per_unit":30},
-         3: {
+            "product_name":"soap",
+            "product_price_per_unit":30},
+          {
             "product_id":4,
-            "name":"toothpaste",
-            "price_per_unit":40}
-    }
+            "product_name":"toothpaste",
+            "product_price_per_unit":40}
+          ]
         
-    )
+    }
 if __name__ == "__main__":
    uvicorn.run("main:app",reload=True,
                host='0.0.0.0', port=5000, workers=1)

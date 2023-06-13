@@ -1,7 +1,7 @@
 import uvicorn
 import math
 from fastapi import FastAPI, Request ,Depends, HTTPException,status,Form
-from fastapi.responses import FileResponse, HTMLResponse,JSONResponse
+from fastapi.responses import FileResponse, HTMLResponse
 from starlette.exceptions import HTTPException 
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 
@@ -98,30 +98,35 @@ def home(request: Request):#,user = Depends(get_current_username)):
     return templates.TemplateResponse('order.html', context={'request': request})
 
 
-@app.get("/getProducts")
+@app.get("getProducts")
 def get_products(request:Request):
-    return JSONResponse(
-        
-    {
-            0:{
+    return {
+        [{
             "product_id":1,
-            "name":"rice",
-            "price_per_unit":10},
-         1:{
+            "product_name":"rice",
+            "product_price_per_unit":10},
+         [{
             "product_id":2,
-            "name":"dhal",
-            "price_per_unit":20},
-          2:{
+            "product_name":"dhal",
+            "product_price_per_unit":20},
+          {
             "product_id":3,
-            "name":"soap",
-            "price_per_unit":30},
-         3: {
-            "product_id":4,
-            "name":"toothpaste",
-            "price_per_unit":40}
-    }
+            "product_name":"soap",
+            "product_price_per_unit":30},
+          {
+            "product_id":1,
+            "product_name":"rice",
+            "product_price_per_unit":10},
+            {
+            "product_id":1,
+            "product_name":"rice",
+            "product_price_per_unit":10},
+            {
+            "product_id":1,
+            "product_name":"rice",
+            "product_price_per_unit":10},]
         
-    )
+    }
 if __name__ == "__main__":
    uvicorn.run("main:app",reload=True,
-               host='0.0.0.0', port=5000, workers=1)
+               host='0.0.0.0', port=8000, workers=1)
